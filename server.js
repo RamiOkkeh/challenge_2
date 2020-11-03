@@ -19,8 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.post('/csvfy', (req, res) => {
-  console.log(req.body);
-  proccess(req.body, data => res.json(data)); 
+  proccess(req.body, data => { res.status(201); res.send(data); }); 
 });
 
 let port = 3001;
