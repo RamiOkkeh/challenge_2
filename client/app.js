@@ -11,7 +11,4 @@ var form = (e) => {
   });
 };
     
-    
-    
-    
 $('form').on('submit', (e) => { form(e); });
