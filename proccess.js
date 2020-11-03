@@ -1,6 +1,6 @@
 
-var proccess = (string, callback) => {
-  var json = JSON.parse(string);
+var proccess = (json, callback) => {
+  // var json = JSON.parse(string);
   var results = Object.keys(json).join(',').slice(0, -9) + '\n';
   
   var recursion = obj => {

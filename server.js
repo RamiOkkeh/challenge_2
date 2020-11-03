@@ -1,16 +1,26 @@
 const express = require('express');
-const multer = require('multer');
+// const multer = require('multer');
 const proccess = require('./proccess.js');
-var upload = multer({ dest: 'uploads/' });
 let app = express();
+
+
+// const storage = multer.diskStorage({
+//   destination: './',
+//   filename: function (req, file, cb) {
+//     cb(null, file.fieldname + '-' + Date.now() + 
+//         path.extname(file.originalname));
+//   }
+// });
+
+// var upload = multer({ storage: storage }).single('json');
 
 app.use(express.static(__dirname + '/client'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post('/csvfy', upload.single('json'), (req, res) => {
-  console.log(req.body.json);
-  proccess(req.body.json, data => res.json(data)); 
+app.post('/csvfy', (req, res) => {
+  console.log(req.body);
+  proccess(req.body, data => res.json(data)); 
 });
 
 let port = 3001;
