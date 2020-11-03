@@ -1,6 +1,6 @@
 var form = (e) => {
   e.preventDefault();
-  console.log($('#jsonFile').val());
+  // console.log($('#jsonFile').val());
   // fs.readFile($('#jsonFile').val(), 'utf8', (data) => {
   //   console.log(data);
   // });
