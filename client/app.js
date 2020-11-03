@@ -1,6 +1,9 @@
 var form = (e) => {
   e.preventDefault();
-  console.log($('#json').val());
+  console.log($('#jsonFile').val());
+  // fs.readFile($('#jsonFile').val(), 'utf8', (data) => {
+  //   console.log(data);
+  // });
   $.ajax({
     url: 'http://127.0.0.1:3001/csvfy',
     method: 'POST',
